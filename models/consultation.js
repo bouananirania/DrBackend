@@ -7,7 +7,7 @@ const consultation = new mongoose.Schema({
     date: { type: Date, required: true },
     typeConsultation: { type: String, required: true },
     remarque: { type: String, required: false },
-    prescription: { type: [String], required: true }
+    prescription: { type: [String], required: false }
 
 });
 const Consultation = drSoftware.model('Consultation',consultation);

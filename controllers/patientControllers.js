@@ -69,7 +69,7 @@ exports.allPatients = async (req, res) => {
 };
 exports.patientData = async (req, res) => {
     try {
-        const { id } = req.body;
+        const { id } = req.query; 
 
         const patient = await Patient.findById(id);
         if (!patient) {
@@ -98,7 +98,7 @@ exports.patientData = async (req, res) => {
 };
 exports.searchPatients = async (req, res) => {
     try {
-        const { searchTerm } = req.body; 
+        const { searchTerm } = req.query;  
         const regex = new RegExp(searchTerm, 'i');
         const patients = await Patient.find({
             $or: [
