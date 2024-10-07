@@ -47,7 +47,7 @@ exports.delet = async (req,res)=>{
 };
 exports.searchRendezvous = async (req, res) => {
     try {
-        const { searchTerm } = req.body;
+        const { searchTerm } = req.query;
         const regex = new RegExp(searchTerm, 'i');
 
         // Trouver les patients correspondants à la recherche
